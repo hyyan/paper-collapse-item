@@ -42,8 +42,16 @@ Custom property | Description | Default
 	<template>
 
 		<style>
+		 :host{
+				display: block;
+				width: 100%;
+				--paper-item-focused-before: {
+					background-color: var(--primary-background-color);
+				};
+			}
 			.header {
 				min-height: 48px;
+				cursor: pointer;
 				color: var(--primary-text-color);
 				@apply(--layout-horizontal);
 				@apply(--layout-center-center);
