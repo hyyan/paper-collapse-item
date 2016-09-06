@@ -6,6 +6,7 @@
 <link rel="import" href="../paper-item/paper-item.html">
 <link rel="import" href="../paper-item/paper-item-body.html">
 <link rel="import" href="../paper-styles/paper-styles.html">
+<link rel="import" href="paper-item-fixed.html">
 
 <!--
 A Material Design [item with header and collapsible content](https://www.google.com/design/spec/components/lists.html)
@@ -77,7 +78,7 @@ Custom property | Description | Default
 			}
 		</style>
 
-		<paper-item>
+		<paper-item-fixed>
 			<paper-item-body>
 				<div class="header" on-tap="_toggleOpened">
 					<template is="dom-if" if="[[icon]]">
@@ -90,7 +91,7 @@ Custom property | Description | Default
 					<content></content>
 				</iron-collapse>
 			</paper-item-body>
-		</paper-item>
+		</paper-item-fixed>
 
 	</template>
 </dom-module>
