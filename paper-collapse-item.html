@@ -83,7 +83,7 @@ Custom property | Description | Default
 					<template is="dom-if" if="[[icon]]">
 						<iron-icon class="icon" src="[[src]]" icon="[[icon]]"></iron-icon>
 					</template>
-					<div class="flex">[[header]]</div>
+					<div class="flex" inner-h-t-m-l="[[header]]"></div>
 					<paper-icon-button class="toogle" icon="[[_toggleIcon]]"></paper-icon-button>
 				</div>
 				<iron-collapse class="content" opened="{{opened}}">
@@ -143,7 +143,7 @@ Custom property | Description | Default
 		 */
 		_toggleOpened: function(e) {
 			this.opened = !this.opened;
-			this.fire('toggle',this);
+			this.fire('toggle', this);
 		},
 		_computeToggleIcon: function(opened) {
 			return opened ? 'icons:expand-less' : 'icons:expand-more';
