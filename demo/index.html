@@ -11,9 +11,15 @@
 		<demo-snippet>
 			<template is="dom-bind">
 				<paper-collapse-item icon="icons:favorite" header="Item 1" opened>
+					<div class="paper-collapse-item-buttons">
+						<paper-icon-button icon="icons:add" on-tap="onAdd"></paper-icon-button>
+					</div>
 					Lots of very interesting content.
 				</paper-collapse-item>
 				<paper-collapse-item icon="icons:info" header="Item 2">
+					Lots of very interesting content.
+				</paper-collapse-item>
+				<paper-collapse-item icon="icons:help" header="<b>Header <u>with</u> HTML</b>">
 					Lots of very interesting content.
 				</paper-collapse-item>
 				<paper-collapse-item icon="icons:help" header="Item 3 (with event)" on-toggle="onToggle">
@@ -25,6 +31,10 @@
 				var scope = document.querySelector('template[is=dom-bind]');
 				scope.onToggle = function() {
 					alert('Toggled');
+				};
+				scope.onAdd = function(e){
+					e.stopPropagation();
+					alert('I add something');
 				};
 			</script>
 		</demo-snippet>
