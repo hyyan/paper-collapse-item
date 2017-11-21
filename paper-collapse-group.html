@@ -89,7 +89,7 @@ Only on item will be opened inside groups
 		_onToggle: function(e){
 
 			for(var x=0; x < this._items.length; x++){
-				if(this._items[x] !== e.target){
+				if(this._items[x] !== e.target && true === e.target.opened){
 					this._items[x].opened = false;
 				}
 			}

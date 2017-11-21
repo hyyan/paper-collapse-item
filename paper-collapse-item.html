@@ -129,13 +129,18 @@ Custom property | Description | Default
 			opened: {
 				type: Boolean,
 				reflectToAttribute: true,
-				notify: true
+				notify: true,
+				observer: '_opendChanged'
 			},
 
 			_toggleIcon: {
 				type: String,
 				computed: '_computeToggleIcon(opened)'
 			}
+		},
+
+		_opendChanged: function(){
+			this.fire('toggle', this);
 		},
 
 		// Private methods
@@ -145,9 +150,9 @@ Custom property | Description | Default
 		 * @event toggle
 		 */
 		_toggleOpened: function(e) {
-			this.opened = !this.opened;
-			this.fire('toggle', this);
+			this.set('opened',!this.opened);
 		},
+		
 		_computeToggleIcon: function(opened) {
 			return opened ? 'icons:expand-less' : 'icons:expand-more';
 		}
